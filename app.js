@@ -4,10 +4,15 @@ var app=new Express();
 
 app.set('view engine','ejs');
 
-app.use(Express.static(__dirname+"public"));
+app.use(Express.static(__dirname+"/public"));
+
+ nav=[
+    {link:'/books',title:'Books'},
+    {link:'/auther',title:'Authers'}
+];
 
 app.get("/",(req,res)=>{
-    res.render('index');
+    res.render('index',nav);
 
 });
 
